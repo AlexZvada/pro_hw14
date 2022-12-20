@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function acc() {
+            let acc = 0;
+            return function (step) {
+                return acc += step;
+            }
+        }
+
+        function createCounter(start = 0, step = 1) {
+                let acc = start;
+                return {
+                    count() {
+                        return acc += step;
+                    },
+                    reset() {
+                        return acc = start;
+                    }
+                }
+            }
+
+
+        const sum = acc();
+        console.log(sum(3));;
+        console.log(sum(5));;
+        console.log(sum(20));;
+        console.log('---')
+        const counter = createCounter(2, 2);
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.count());
+        console.log(counter.reset());
+        console.log(counter.count());
+        console.log(counter.count());
+
+
+    </script>
+</body>
+
+</html>
